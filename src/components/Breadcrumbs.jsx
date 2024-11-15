@@ -2,11 +2,19 @@ import React from 'react';
 import Link from 'next/link';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
-const Breadcrumbs = ({ items = [] }) => {
-    return (
+const Breadcrumbs = ({ product }) => {
+  const breadcrumbItems = [
+    { label: "Página Inicial", href: "/" },
+    { label: product.category, href: "#" },
+    { label: product.subcategory, href: "#" },
+    { label: product.subsubcategory, href: "#" },
+    { label: product.title, href: "#" },
+];
+  
+  return (
       <nav aria-label="Breadcrumb" className="w-full">
         <ol className="flex items-center flex-wrap gap-2">
-          {items.map((item, index) => (
+          {breadcrumbItems.map((item, index) => (
             <li key={index} className="flex items-center">
               {index > 0 && (
                 <span className="mx-2">
@@ -14,7 +22,7 @@ const Breadcrumbs = ({ items = [] }) => {
                 </span>
               )}
               
-              {index === items.length - 1 ? (
+              {index === breadcrumbItems.length - 1 ? (
                 <span 
                   className="text-on-surface-variant font-medium" 
                   aria-current="page"
