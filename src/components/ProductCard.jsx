@@ -1,13 +1,12 @@
 "use client"
 import { useState } from 'react';
-import MinusIcon from '@mui/icons-material/Remove';
-import AddIcon from '@mui/icons-material/Add';
 import AddCart from '@mui/icons-material/AddShoppingCart';
 import CreditCard from '@mui/icons-material/CreditCard';
 import OpenInBrowser from '@mui/icons-material/OpenInBrowser';
 import Link from 'next/link';
 import useCart from '@/hooks/useCart';
 import Image from 'next/image';
+import QuantityButtons from '@/components/QuantityButtons';
 
 const ProductCard = ({ product }) => {
     const [quantity, setQuantity] = useState(1);
@@ -45,21 +44,17 @@ const ProductCard = ({ product }) => {
 
                 <div className="flex items-center mb-3">
                     <span className='mr-2'>Quantidade: </span>
-                    <div className='flex items-center border rounded-xl bg-background'>
-                        <button
-                            onClick={decreaseQuantity}
-                            className='px-2 py-1 text-primary hover:bg-gray-100  rounded-tl-xl rounded-bl-xl flex items-center'
-                        >
-                            <MinusIcon />
-                    </button>
-                    <input type='text' value={quantity} className='w-8 text-center text-primary' readOnly></input>
-                        <button
-                            onClick={increaseQuantity}
-                            className='px-2 py-1 text-primary hover:bg-gray-100  rounded-tr-xl rounded-br-xl flex items-center'
-                        >
-                            <AddIcon />
-                    </button>
-                    </div>
+                    <QuantityButtons
+                        quantity={quantity}
+                        increaseQuantity={increaseQuantity}
+                        decreaseQuantity={decreaseQuantity}
+                        buttonStyles={{
+                            decrease: 'text-primary hover:bg-gray-100 rounded-tl-xl rounded-bl-xl flex items-center',
+                            increase: 'text-primary hover:bg-gray-100 rounded-tr-xl rounded-br-xl flex items-center'
+                          }}
+                          inputStyles='text-on-primary bg-primary flex items-center'
+                          containerStyles='border rounded-xl bg-background mb-3 flex items-center'
+                    />
                 </div>
 
                 <div className='flex gap-2 flex-col'>
