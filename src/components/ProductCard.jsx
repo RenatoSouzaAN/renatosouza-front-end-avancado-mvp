@@ -63,8 +63,8 @@ const ProductCard = ({ product }) => {
                         product={product}
                         quantity={quantity}
                         containerStyles="mb-1"
-                        cartButtonStyles='text-primary'
-                        buyNowButtonStyles='text-primary'
+                        cartButtonStyles='text-primary hover:bg-gray-100'
+                        buyNowButtonStyles='text-primary hover:bg-gray-100'
                     />
                 </div>
             </div>

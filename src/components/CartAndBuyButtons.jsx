@@ -1,8 +1,8 @@
 import AddCart from '@mui/icons-material/AddShoppingCart';
 import CreditCard from '@mui/icons-material/CreditCard';
 
-const defaultCartButtonStyles = 'px-4 py-3 bg-background rounded-lg hover:bg-gray-100 flex items-center justify-center';
-const defaultBuyNowButtonStyles = 'px-4 py-3 bg-background rounded-lg hover:bg-gray-100 flex items-center justify-center';
+const defaultCartButtonStyles = 'px-4 py-3 bg-background rounded-lg flex items-center justify-center';
+const defaultBuyNowButtonStyles = 'px-4 py-3 bg-background rounded-lg flex items-center justify-center';
 
 const CartAndBuyButtons = ({
     handleAddToCart,
