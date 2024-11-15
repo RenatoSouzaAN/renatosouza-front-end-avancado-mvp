@@ -1,12 +1,11 @@
 "use client"
 import { useState } from 'react';
-import AddCart from '@mui/icons-material/AddShoppingCart';
-import CreditCard from '@mui/icons-material/CreditCard';
 import OpenInBrowser from '@mui/icons-material/OpenInBrowser';
 import Link from 'next/link';
 import useCart from '@/hooks/useCart';
 import Image from 'next/image';
 import QuantityButtons from '@/components/QuantityButtons';
+import CartAndBuyButtons from '@/components/CartAndBuyButtons';
 
 const ProductCard = ({ product }) => {
     const [quantity, setQuantity] = useState(1);
@@ -53,25 +52,20 @@ const ProductCard = ({ product }) => {
                             increase: 'text-primary hover:bg-gray-100 rounded-tr-xl rounded-br-xl flex items-center'
                           }}
                           inputStyles='text-on-primary bg-primary flex items-center'
-                          containerStyles='border rounded-xl bg-background mb-3 flex items-center'
+                          containerStyles='border rounded-xl bg-background flex items-center'
                     />
                 </div>
 
                 <div className='flex gap-2 flex-col'>
-                    <button
-                        onClick={() => handleAddToCart(product, quantity)}
-                        className='flex-1 px-4 py-3 bg-background text-primary rounded-lg hover:bg-gray-100 flex items-center justify-center'
-                    >
-                        <AddCart className='mr-2'/>
-                            Adicionar ao carrinho
-                    </button>
-                    <button
-                        onClick={() => handleBuyNow(product, quantity)}
-                        className='flex-1 px-4 py-3 bg-background text-primary rounded-lg hover:bg-gray-100 flex items-center justify-center'
-                    >
-                            <CreditCard className='mr-2'/>
-                                Comprar Agora
-                    </button>
+                    <CartAndBuyButtons
+                        handleAddToCart={handleAddToCart}
+                        handleBuyNow={handleBuyNow}
+                        product={product}
+                        quantity={quantity}
+                        containerStyles="mb-1"
+                        cartButtonStyles='text-primary'
+                        buyNowButtonStyles='text-primary'
+                    />
                 </div>
             </div>
             
