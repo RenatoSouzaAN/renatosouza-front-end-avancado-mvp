@@ -22,7 +22,7 @@ const ProductCard = ({ product }) => {
     }
 
     return (
-        <div className="flex flex-col bg-white rounded-lg overflow-hidden shadow-md transform motion-safe:hover:scale-105 transition duration-300">
+        <div className="flex flex-col bg-background rounded-lg overflow-hidden shadow-md transform motion-safe:hover:scale-105 transition duration-300">
             <Link href={`/products/${product.id}`}>
                 <div className="h-60 bg-gray-100 flex items-center justify-center relative">
                     <div className='absolute top-2 right-2 z-10'>
@@ -45,7 +45,7 @@ const ProductCard = ({ product }) => {
 
                 <div className="flex items-center mb-3">
                     <span className='mr-2'>Quantidade: </span>
-                    <div className='flex items-center border rounded-xl bg-white'>
+                    <div className='flex items-center border rounded-xl bg-background'>
                         <button
                             onClick={decreaseQuantity}
                             className='px-2 py-1 text-primary hover:bg-gray-100  rounded-tl-xl rounded-bl-xl flex items-center'
@@ -65,14 +65,14 @@ const ProductCard = ({ product }) => {
                 <div className='flex gap-2 flex-col'>
                     <button
                         onClick={() => handleAddToCart(product, quantity)}
-                        className='flex-1 px-4 py-3 bg-white text-primary rounded-lg hover:bg-gray-100 flex items-center justify-center'
+                        className='flex-1 px-4 py-3 bg-background text-primary rounded-lg hover:bg-gray-100 flex items-center justify-center'
                     >
                         <AddCart className='mr-2'/>
                             Adicionar ao carrinho
                     </button>
                     <button
                         onClick={() => handleBuyNow(product, quantity)}
-                        className='flex-1 px-4 py-3 bg-white text-primary rounded-lg hover:bg-gray-100 flex items-center justify-center'
+                        className='flex-1 px-4 py-3 bg-background text-primary rounded-lg hover:bg-gray-100 flex items-center justify-center'
                     >
                             <CreditCard className='mr-2'/>
                                 Comprar Agora
