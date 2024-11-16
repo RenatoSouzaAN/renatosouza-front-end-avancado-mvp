@@ -12,8 +12,8 @@ const Breadcrumbs = ({ product }) => {
 ];
   
   return (
-      <nav aria-label="Breadcrumb" className="w-full">
-        <ol className="flex items-center flex-wrap gap-2">
+      <nav aria-label="Breadcrumb" className="w-full text-sm">
+        <ol className="flex items-center flex-wrap">
           {breadcrumbItems.map((item, index) => (
             <li key={index} className="flex items-center">
               {index > 0 && (

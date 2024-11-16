@@ -18,7 +18,7 @@ const ShareButton = ({ product }) => {
     };
 
     return (
-        <button onClick={handleShare} className="px-4 py-2 bg-on-primary text-primary rounded-lg hover:bg-gray-100">
+        <button onClick={handleShare} className="border flex justify-center items-center px-4 py-2 bg-on-primary text-primary rounded-lg hover:bg-gray-100">
             {isCopied ? 'Link Copiado!' : <Share />}
         </button>
     );

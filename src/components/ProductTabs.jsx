@@ -53,7 +53,7 @@ const ProductTabs = ({ product }) => {
                             className={`px-4 py-2 transition-colors duration-200 ${
                                 selectedTab === tab.id
                                     ? "text-primary border-b-2 border-primary"
-                                    : "text-on-surface-variant hover:text-primary"
+                                    : "text-primary"
                             }`}
                         >
                             {tab.label}
