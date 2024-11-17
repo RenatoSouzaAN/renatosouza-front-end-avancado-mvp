@@ -11,12 +11,8 @@ const ProductCard = ({ product }) => {
     const [quantity, setQuantity] = useState(1);
     const { handleAddToCart, handleBuyNow } = useCart();
 
-    const increaseQuantity = () => {
-        if (quantity < product.stock) setQuantity(quantity + 1);
-    };
-
-    const decreaseQuantity = () => {
-        if (quantity > 1) setQuantity(quantity - 1);
+    const handleQuantityChange = (newQuantity) => {
+        setQuantity(newQuantity);
     };
 
     return (
@@ -46,9 +42,9 @@ const ProductCard = ({ product }) => {
                 <div className="flex items-center mb-3">
                     <span className="mr-2">Quantidade: </span>
                     <QuantityButtons
-                        quantity={quantity}
-                        increaseQuantity={increaseQuantity}
-                        decreaseQuantity={decreaseQuantity}
+                        initialQuantity={quantity}
+                        maxQuantity={product.stock}
+                        onQuantityChange={handleQuantityChange}
                         buttonStyles={{
                             decrease:
                                 "text-primary hover:bg-gray-100 rounded-tl-xl rounded-bl-xl flex items-center",

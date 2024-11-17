@@ -26,12 +26,8 @@ const ProductPage = () => {
 
     const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
-    const increaseQuantity = () => {
-        if (quantity < product.stock) setQuantity(quantity + 1);
-    };
-
-    const decreaseQuantity = () => {
-        if (quantity > 1) setQuantity(quantity - 1);
+    const handleQuantityChange = (newQuantity) => {
+        setQuantity(newQuantity);
     };
 
     if (!product) {
@@ -79,7 +75,7 @@ const ProductPage = () => {
                                 <FavoriteButton
                                     product={product}
                                 ></FavoriteButton>
-                                <ShareButton product={product}></ShareButton>
+                                <ShareButton/>
                             </div>
                         </div>
 
@@ -98,9 +94,9 @@ const ProductPage = () => {
                             <span className="mr-2">Quantidade: </span>
                             <div className="flex items-center justify-between flex-1 border rounded-xl bg-background">
                                 <QuantityButtons
-                                    quantity={quantity}
-                                    increaseQuantity={increaseQuantity}
-                                    decreaseQuantity={decreaseQuantity}
+                                    initialQuantity={quantity}
+                                    maxQuantity={product.stock}
+                                    onQuantityChange={handleQuantityChange}
                                     buttonStyles={{
                                         decrease:
                                             "text-primary hover:bg-gray-100 rounded-tl-xl rounded-bl-xl flex items-center justify-center flex-1",
