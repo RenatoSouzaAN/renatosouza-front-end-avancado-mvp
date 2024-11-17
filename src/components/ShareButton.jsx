@@ -1,10 +1,8 @@
-import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import Share from "@mui/icons-material/ShareOutlined"
 
-const ShareButton = ({ product }) => {
+const ShareButton = () => {
     const [isCopied, setIsCopied] = useState(false);
-    const router = useRouter();
 
     const handleShare = async () => {
         try {
