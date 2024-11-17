@@ -38,9 +38,17 @@ const ProductPage = () => {
         return <div>Produto não encontrado</div>;
     }
 
+    const productBreadcrumbs = [
+        { label: "Página Inicial", href: "/" },
+        { label: product.category, href: "#" },
+        { label: product.subcategory, href: "#" },
+        { label: product.subsubcategory, href: "#" },
+        { label: product.title, href: "#" },
+    ];
+
     return (
         <div className="mx-auto px-48 md:px-48 pt-4 pb-10">
-            <Breadcrumbs product={product} />
+            <Breadcrumbs items={productBreadcrumbs} />
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
                 <section className="flex flex-col gap-3">
