@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import MinusIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
 
@@ -10,9 +10,16 @@ const QuantityButtons = ({
     buttonStyles = {},
     inputStyles = {},
     containerStyles = {},
+    currentQuantity 
 }) => {
 
-    const [quantity, setQuantity] = useState(initialQuantity);
+    const [quantity, setQuantity] = useState(currentQuantity || initialQuantity);
+
+    useEffect(() => {
+        if (currentQuantity !== undefined) {
+            setQuantity(currentQuantity);
+        }
+    }, [currentQuantity]);
 
     const increaseQuantity = () => {
         if (quantity < maxQuantity) {

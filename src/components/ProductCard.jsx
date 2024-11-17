@@ -2,7 +2,7 @@
 import { useState } from "react";
 import OpenInBrowser from "@mui/icons-material/OpenInBrowser";
 import Link from "next/link";
-import useCart from "@/hooks/useCart";
+import {useCart} from "@/contexts/CartContext";
 import Image from "next/image";
 import QuantityButtons from "@/components/QuantityButtons";
 import CartAndBuyButtons from "@/components/CartAndBuyButtons";
@@ -58,8 +58,10 @@ const ProductCard = ({ product }) => {
 
                 <div className="flex gap-2 flex-col">
                     <CartAndBuyButtons
-                        handleAddToCart={handleAddToCart}
-                        handleBuyNow={handleBuyNow}
+                        handleAddToCart={() =>
+                            handleAddToCart(product, quantity)
+                        }
+                        handleBuyNow={() => handleBuyNow(product, quantity)}
                         product={product}
                         quantity={quantity}
                         containerStyles="mb-1"
