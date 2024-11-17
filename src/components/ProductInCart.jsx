@@ -47,12 +47,17 @@ const ProductInCart = ({ product, onRemove, onUpdateQuantity }) => {
                 </div>
 
                 <div className="flex flex-col items-start">
-                    <p className="text-3xl mb-2 pl-1">
+                    <p className="text-3xl pl-1">
                         Preço: R${(product.price * product.quantity).toFixed(2)}
                     </p>
+                    {product.quantity > 1 && (
+                        <p className="text-primary pl-1">
+                            Preço unitário: R${product.price.toFixed(2)}
+                        </p>
+                    )}
                     <button
                         onClick={onRemove}
-                        className="flex items-center text-primary gap-0"
+                        className="flex items-center text-primary mt-2 gap-0"
                     >
                         <DeleteOutline />
                         Remover produto
