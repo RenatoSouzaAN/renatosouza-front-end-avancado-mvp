@@ -4,7 +4,7 @@ import { useParams } from "next/navigation";
 import { useState } from "react";
 import Image from "next/image";
 
-import useCart from "@/hooks/useCart";
+import { useCart } from "@/contexts/CartContext";
 
 import mockProducts from "@/mock/products";
 
@@ -127,8 +127,10 @@ const ProductPage = () => {
 
                         <div className="">
                             <CartAndBuyButtons
-                                handleAddToCart={handleAddToCart}
-                                handleBuyNow={handleBuyNow}
+                                handleAddToCart={() =>
+                                    handleAddToCart(product, quantity)
+                                }
+                                handleBuyNow={() => handleBuyNow(product, quantity)}
                                 product={product}
                                 quantity={quantity}
                                 containerStyles="mb-1"
