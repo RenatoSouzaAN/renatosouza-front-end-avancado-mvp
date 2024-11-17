@@ -34,7 +34,6 @@ const CartPage = () => {
                         <h1 className="text-4xl font-bold text-primary">
                             Meu Carrinho
                         </h1>
-                        {/* cartItems test */}
                         {cart.length === 0 ? (
                             <p className="text-primary">
                                 Seu carrinho está vazio.
@@ -54,9 +53,6 @@ const CartPage = () => {
                     </div>
                 </section>
 
-                {/* <section className="flex flex-col gap-3 col-span-4">
-                    <div className="flex flex-col border"> Teste</div>
-                </section> */}
 
                 <section className="flex flex-col gap-3 col-span-4">
                     <div className="flex flex-col border rounded-lg border-primary p-4">
@@ -81,7 +77,6 @@ const CartPage = () => {
                         </div>
                         <button
                             className="mt-4 bg-primary text-white py-2 px-4 rounded-lg hover:bg-primary/90"
-                            // onClick={() => router.push("/checkout")}
                         >
                             Finalizar Compra
                         </button>
