@@ -1,19 +1,43 @@
+'use client';
+import { useState } from 'react';
 import MinusIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
 
 const QuantityButtons = ({
-    quantity,
-    increaseQuantity,
-    decreaseQuantity,
+    initialQuantity = 1,
+    maxQuantity = Infinity,
+    onQuantityChange,
     buttonStyles = {},
     inputStyles = {},
     containerStyles = {},
 }) => {
+
+    const [quantity, setQuantity] = useState(initialQuantity);
+
+    const increaseQuantity = () => {
+        if (quantity < maxQuantity) {
+            const newQuantity = quantity + 1;
+            setQuantity(newQuantity);
+            onQuantityChange?.(newQuantity);
+        };
+    };
+
+    const decreaseQuantity = () => {
+        if (quantity > 1) {
+            const newQuantity = quantity - 1;
+            setQuantity(newQuantity);
+            onQuantityChange?.(newQuantity);
+        };
+    };
+    
     return (
         <div className={`flex items-center ${containerStyles}`}>
             <button
                 onClick={decreaseQuantity}
-                className={`px-2 py-1 ${buttonStyles.decrease || ''}`}
+                disabled={quantity === 1}
+                className={`px-2 py-1 ${buttonStyles.decrease || ''} ${
+                    quantity === 1 ? 'opacity-50 cursor-not-allowed' : ''
+                }`}
             >
                 <MinusIcon />
             </button>
@@ -27,7 +51,10 @@ const QuantityButtons = ({
   
             <button
                 onClick={increaseQuantity}
-                className={`px-2 py-1 ${buttonStyles.increase || ''}`}
+                disabled={quantity === maxQuantity}
+                className={`px-2 py-1 ${buttonStyles.increase || ''} ${
+                    quantity === maxQuantity ? 'opacity-50 cursor-not-allowed' : ''
+                }`}
             >
                 <AddIcon />
             </button>
