@@ -1,5 +1,5 @@
 import "@/app/globals.css";
-import Header from "@/components/Header";
+import { ClientLayout } from "./ClientLayout";
 
 export const metadata = {
   title: "DMarket",
@@ -10,9 +10,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="br">
       <body className="font-sans">
-        <Header />
-        <main>{children}</main>
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
-  )
+  );
 }
