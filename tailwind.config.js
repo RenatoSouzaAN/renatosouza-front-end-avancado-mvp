@@ -10,6 +10,7 @@ module.exports = {
             fontFamily: {
                 sans: ["Roboto", "Arial", "sans-serif"], // Replace or add Roboto to the default sans stack
             },
+            height: { header: "104px" },
             colors: {
                 background: "var(--background)",
                 foreground: "var(--foreground)",
