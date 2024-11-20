@@ -25,7 +25,7 @@ const CartPage = () => {
     };
 
     return (
-        <div className="mx-auto px-48 md:px-48 pt-4 pb-10">
+        <div className="mx-auto pt-4 pb-10">
             <Breadcrumbs items={cartBreadcrumbs} />
 
             <div className="grid grid-cols-12 gap-8 mt-4">

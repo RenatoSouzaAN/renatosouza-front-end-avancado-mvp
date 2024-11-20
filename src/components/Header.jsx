@@ -11,9 +11,8 @@ const Header = () => {
     const pathname = usePathname();
 
     return (
-        <header className="bg-primary text-on-primary py-8">
-            <div className="mx-auto px-48">
-                <div className="flex justify-between items-center">
+        <header className="bg-primary text-on-primary py-8 w-full">
+                <div className="flex justify-between items-center max-w-screen-xl mx-auto">
                     <Link href="/">
                         <h1 className="text-4xl font-bold">DMarket</h1>
                     </Link>
@@ -31,7 +30,6 @@ const Header = () => {
                         </button>
                     </div>
                 </div>
-            </div>
         </header>
     );
 };
