@@ -44,7 +44,7 @@ const ProductPage = () => {
     ];
 
     return (
-        <div className="mx-auto px-48 md:px-48 pt-4 pb-10">
+        <div className="mx-auto pt-4 pb-10">
             <Breadcrumbs items={productBreadcrumbs} />
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
@@ -76,7 +76,7 @@ const ProductPage = () => {
                                 <FavoriteButton
                                     product={product}
                                 ></FavoriteButton>
-                                <ShareButton/>
+                                <ShareButton />
                             </div>
                         </div>
 
@@ -110,14 +110,16 @@ const ProductPage = () => {
                             </div>
                         </div>
 
-                        <Shipping/>
+                        <Shipping />
 
                         <div className="">
                             <CartAndBuyButtons
                                 handleAddToCart={() =>
                                     handleAddToCart(product, quantity)
                                 }
-                                handleBuyNow={() => handleBuyNow(product, quantity)}
+                                handleBuyNow={() =>
+                                    handleBuyNow(product, quantity)
+                                }
                                 product={product}
                                 quantity={quantity}
                                 containerStyles="mb-1"
