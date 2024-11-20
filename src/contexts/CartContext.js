@@ -18,12 +18,12 @@ export function CartProvider({ children }) {
             if (existingProductIndex >= 0) {
                 const existingProduct = prevCart[existingProductIndex];
                 const newQuantity = existingProduct.quantity + quantity;
-                
+
                 if (newQuantity <= product.stock) {
                     const updatedCart = [...prevCart];
                     updatedCart[existingProductIndex] = {
                         ...existingProduct,
-                        quantity: newQuantity
+                        quantity: newQuantity,
                     };
                     return updatedCart;
                 } else {
@@ -54,12 +54,12 @@ export function CartProvider({ children }) {
             if (existingProductIndex >= 0) {
                 const existingProduct = prevCart[existingProductIndex];
                 const newQuantity = existingProduct.quantity + quantity;
-                
+
                 if (newQuantity <= product.stock) {
                     const updatedCart = [...prevCart];
                     updatedCart[existingProductIndex] = {
                         ...existingProduct,
-                        quantity: newQuantity
+                        quantity: newQuantity,
                     };
                     return updatedCart;
                 } else {

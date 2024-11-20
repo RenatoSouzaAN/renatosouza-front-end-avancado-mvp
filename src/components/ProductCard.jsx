@@ -2,7 +2,7 @@
 import { useState } from "react";
 import OpenInBrowser from "@mui/icons-material/OpenInBrowser";
 import Link from "next/link";
-import {useCart} from "@/contexts/CartContext";
+import { useCart } from "@/contexts/CartContext";
 import Image from "next/image";
 import QuantityButtons from "@/components/QuantityButtons";
 import CartAndBuyButtons from "@/components/CartAndBuyButtons";

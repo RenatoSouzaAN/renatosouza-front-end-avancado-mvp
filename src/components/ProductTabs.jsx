@@ -27,8 +27,12 @@ const ProductTabs = ({ product }) => {
                                 key={index}
                                 className="p-3 border rounded-lg shadow-md"
                             >
-                                <h3 className="font-semibold mb-1 text-primary">{specification.title}</h3>
-                                <p className="text-primary">{specification.info}</p>
+                                <h3 className="font-semibold mb-1 text-primary">
+                                    {specification.title}
+                                </h3>
+                                <p className="text-primary">
+                                    {specification.info}
+                                </p>
                             </div>
                         ))}
                     </div>
@@ -36,7 +40,10 @@ const ProductTabs = ({ product }) => {
             case "reviews":
                 return (
                     <div className="flex justify-center">
-                        <p className="text-primary">Nenhuma avaliação para este produto, experimente adicionar uma.</p>
+                        <p className="text-primary">
+                            Nenhuma avaliação para este produto, experimente
+                            adicionar uma.
+                        </p>
                     </div>
                 );
         }

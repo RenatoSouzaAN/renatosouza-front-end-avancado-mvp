@@ -27,15 +27,15 @@ const ImageSelector = ({
 
     return (
         <div className="relative flex items-center justify-center">
-                {showPrevious && (
-                    <button
-                        onClick={handlePrevious}
-                        className="absolute left-10 p-1 text-primary bg-background rounded-full flex items-center justify-center shadow-md hover:bg-gray-100"
-                        aria-label="Previous image"
-                    >
-                        <ChevronLeft className="w-5 h-5" />
-                    </button>
-                )}
+            {showPrevious && (
+                <button
+                    onClick={handlePrevious}
+                    className="absolute left-10 p-1 text-primary bg-background rounded-full flex items-center justify-center shadow-md hover:bg-gray-100"
+                    aria-label="Previous image"
+                >
+                    <ChevronLeft className="w-5 h-5" />
+                </button>
+            )}
 
             <div className="flex gap-2 overflow-hidden mx-8">
                 {images

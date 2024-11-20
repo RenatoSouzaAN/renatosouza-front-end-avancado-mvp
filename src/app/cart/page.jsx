@@ -53,7 +53,6 @@ const CartPage = () => {
                     </div>
                 </section>
 
-
                 <section className="flex flex-col gap-3 col-span-4">
                     <div className="flex flex-col border rounded-lg border p-4">
                         <Shipping />
@@ -73,11 +72,9 @@ const CartPage = () => {
                         <hr className="h-px my-2 bg-primary border-0 dark:bg-primary"></hr>
                         <div className="flex justify-between mb-2 text-primary">
                             <span>Total</span>
-                            <span>R$ {(subTotal() + 15.90).toFixed(2)}</span>
+                            <span>R$ {(subTotal() + 15.9).toFixed(2)}</span>
                         </div>
-                        <button
-                            className="mt-4 bg-primary text-white py-2 px-4 rounded-lg hover:bg-primary/90"
-                        >
+                        <button className="mt-4 bg-primary text-white py-2 px-4 rounded-lg hover:bg-primary/90">
                             Finalizar Compra
                         </button>
                     </div>
