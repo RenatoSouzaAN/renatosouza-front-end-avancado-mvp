@@ -30,7 +30,7 @@ const CartPage = () => {
 
             <div className="grid grid-cols-12 gap-8 mt-4">
                 <section className="flex flex-col gap-3 col-span-8">
-                    <div className="flex flex-col gap-6 border rounded-lg border p-4">
+                    <div className="flex flex-col gap-6 rounded-lg border p-4">
                         <h1 className="text-4xl font-bold text-primary">
                             Meu Carrinho
                         </h1>
@@ -54,10 +54,10 @@ const CartPage = () => {
                 </section>
 
                 <section className="flex flex-col gap-3 col-span-4">
-                    <div className="flex flex-col border rounded-lg border p-4">
+                    <div className="flex flex-col rounded-lg border p-4">
                         <Shipping />
                     </div>
-                    <div className="flex flex-col border rounded-lg border p-4">
+                    <div className="flex flex-col rounded-lg border p-4">
                         <h2 className="text-2xl font-bold text-primary mb-4">
                             Resumo do Pedido
                         </h2>
