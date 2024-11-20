@@ -7,7 +7,7 @@ import { DeleteOutline, OpenInBrowser } from "@mui/icons-material";
 
 const ProductInCart = ({ product, onRemove, onUpdateQuantity }) => {
     return (
-        <div className="flex flex-row items-center rounded-md shadow-md transform motion-safe:hover:scale-[1.02] transition duration-300">
+        <div className="flex flex-row items-center rounded-md border shadow-md transform motion-safe:hover:scale-[1.02] transition duration-300">
             <Link href={`/products/${product.id}`}>
                 <div className="w-48 h-48 bg-gray-100 flex items-center justify-center relative">
                     <div className="absolute top-2 right-2 z-10">

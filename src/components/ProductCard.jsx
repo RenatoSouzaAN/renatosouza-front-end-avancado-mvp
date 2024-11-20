@@ -16,7 +16,7 @@ const ProductCard = ({ product }) => {
     };
 
     return (
-        <div className="flex flex-col bg-background rounded-lg overflow-hidden shadow-md transform motion-safe:hover:scale-105 transition duration-300">
+        <div className="flex flex-col bg-background border rounded-lg overflow-hidden shadow-md transform motion-safe:hover:scale-105 transition duration-300">
             <Link href={`/products/${product.id}`}>
                 <div className="h-60 bg-gray-100 flex items-center justify-center relative">
                     <div className="absolute top-2 right-2 z-10">
