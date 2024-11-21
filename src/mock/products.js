@@ -1,5 +1,3 @@
-import { Description } from "@mui/icons-material";
-
 const products = [
     {
         id: "1",
