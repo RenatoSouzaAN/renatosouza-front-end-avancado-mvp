@@ -2,97 +2,123 @@
 
 import { createContext, useContext, useState } from "react";
 import { useRouter } from "next/navigation";
+import { useNotification } from "./NotificationContext";
 
 const CartContext = createContext();
 
 export function CartProvider({ children }) {
     const [cart, setCart] = useState([]);
     const router = useRouter();
+    const { addNotification } = useNotification();
 
     const handleAddToCart = (product, quantity) => {
-        setCart((prevCart) => {
-            const existingProductIndex = prevCart.findIndex(
-                (item) => item.id === product.id
-            );
-
-            if (existingProductIndex >= 0) {
-                const existingProduct = prevCart[existingProductIndex];
-                const newQuantity = existingProduct.quantity + quantity;
-
-                if (newQuantity <= product.stock) {
-                    const updatedCart = [...prevCart];
-                    updatedCart[existingProductIndex] = {
-                        ...existingProduct,
-                        quantity: newQuantity,
-                    };
-                    return updatedCart;
-                } else {
-                    alert("Quantidade indisponível no estoque");
-                    return prevCart;
-                }
-            } else {
-                if (quantity <= product.stock) {
-                    return [...prevCart, { ...product, quantity }];
-                } else {
-                    alert("Quantidade indisponível no estoque");
-                    return prevCart;
-                }
-            }
-        });
-
-        console.log(
-            `Adicionando ao carrinho: ${product.title} (Quantidade: ${quantity})`
+        const existingProductIndex = cart.findIndex(
+            (item) => item.id === product.id
         );
+
+        if (existingProductIndex >= 0) {
+            const existingProduct = cart[existingProductIndex];
+            const newQuantity = existingProduct.quantity + quantity;
+
+            if (newQuantity <= product.stock) {
+                const updatedCart = [...cart];
+                updatedCart[existingProductIndex] = {
+                    ...existingProduct,
+                    quantity: newQuantity,
+                };
+
+                addNotification(
+                    `${product.title} adicionado ao carrinho (Quantidade: ${newQuantity})`,
+                    "success"
+                );
+
+                setCart(updatedCart);
+            } else {
+                addNotification(
+                    "Quantidade indisponível no estoque",
+                    "warning"
+                );
+                setCart(cart);
+            }
+        } else {
+            if (quantity <= product.stock) {
+                addNotification(
+                    `${product.title} adicionado ao carrinho (Quantidade: ${quantity})`,
+                    "success"
+                );
+                setCart([...cart, { ...product, quantity }]);
+            } else {
+                addNotification(
+                    "Quantidade indisponível no estoque",
+                    "warning"
+                );
+                setCart(cart);
+            }
+        }
     };
 
     const handleBuyNow = (product, quantity) => {
-        setCart((prevCart) => {
-            const existingProductIndex = prevCart.findIndex(
-                (item) => item.id === product.id
-            );
-
-            if (existingProductIndex >= 0) {
-                const existingProduct = prevCart[existingProductIndex];
-                const newQuantity = existingProduct.quantity + quantity;
-
-                if (newQuantity <= product.stock) {
-                    const updatedCart = [...prevCart];
-                    updatedCart[existingProductIndex] = {
-                        ...existingProduct,
-                        quantity: newQuantity,
-                    };
-                    return updatedCart;
-                } else {
-                    alert("Quantidade indisponível no estoque");
-                    return prevCart;
-                }
-            } else {
-                if (quantity <= product.stock) {
-                    return [...prevCart, { ...product, quantity }];
-                } else {
-                    alert("Quantidade indisponível no estoque");
-                    return prevCart;
-                }
-            }
-        });
-
-        console.log(
-            `Comprando agora: ${product.title} (Quantidade: ${quantity})`
+        const existingProductIndex = cart.findIndex(
+            (item) => item.id === product.id
         );
+
+        if (existingProductIndex >= 0) {
+            const existingProduct = cart[existingProductIndex];
+            const newQuantity = existingProduct.quantity + quantity;
+
+            if (newQuantity <= product.stock) {
+                const updatedCart = [...cart];
+                updatedCart[existingProductIndex] = {
+                    ...existingProduct,
+                    quantity: newQuantity,
+                };
+                setCart(updatedCart);
+            } else {
+                addNotification(
+                    "Quantidade indisponível no estoque",
+                    "warning"
+                );
+                setCart(cart);
+            }
+        } else {
+            if (quantity <= product.stock) {
+                setCart([...cart, { ...product, quantity }]);
+            } else {
+                addNotification(
+                    "Quantidade indisponível no estoque",
+                    "warning"
+                );
+                setCart(cart);
+            }
+        }
         router.push("/cart");
     };
 
     const removeFromCart = (productId) => {
-        setCart((prevCart) => prevCart.filter((item) => item.id !== productId));
+        const removedProduct = cart.find((item) => item.id === productId);
+
+        if (removedProduct) {
+            addNotification(
+                `${removedProduct.title} removido do carrinho`,
+                "info"
+            );
+        }
+
+        setCart(cart.filter((item) => item.id !== productId));
     };
 
     const updateQuantity = (productId, newQuantity) => {
-        setCart((prevCart) =>
-            prevCart.map((item) =>
-                item.id === productId
-                    ? { ...item, quantity: newQuantity }
-                    : item
-            )
+        setCart(
+            cart.map((item) => {
+                if (item.id === productId) {
+                    addNotification(
+                        `${item.title} atualizado no carrinho (Quantidade: ${newQuantity})`,
+                        "info"
+                    );
+                    return { ...item, quantity: newQuantity };
+                }
+                return item;
+            })
         );
     };
 
