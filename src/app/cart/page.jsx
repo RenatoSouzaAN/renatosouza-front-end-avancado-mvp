@@ -1,11 +1,11 @@
 "use client";
 import React from "react";
 
+import { useRouter } from "next/navigation";
 import { useCart } from "@/contexts/CartContext";
 
 import Breadcrumbs from "@/components/Breadcrumbs";
 import ProductInCart from "@/components/ProductInCart";
-import { useRouter } from "next/navigation";
 import Shipping from "@/components/Shipping";
 
 const CartPage = () => {

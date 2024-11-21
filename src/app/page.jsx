@@ -1,6 +1,8 @@
 import React from "react";
-import ProductCard from "@/components/ProductCard";
+
 import mockProducts from "@/mock/products";
+
+import ProductCard from "@/components/ProductCard";
 
 export default function Home() {
     return (
