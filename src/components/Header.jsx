@@ -7,12 +7,14 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircleOutlined";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCart } from "@/contexts/CartContext";
+import { useNotification } from "@/contexts/NotificationContext";
 
 const Header = () => {
     const pathname = usePathname();
     const { cart } = useCart();
     const [animationKey, setAnimationKey] = useState(0);
     const [previousCount, setPreviousCount] = useState(0);
+    const { addNotification } = useNotification();
 
     const cartItemCount = cart.reduce(
         (total, item) => total + item.quantity,
@@ -25,6 +27,11 @@ const Header = () => {
         }
         setPreviousCount(cartItemCount);
     }, [cartItemCount, previousCount]);
+
+    const handleLoginClick = () => {
+        addNotification("Essa funcionalidade ainda não está implementada.",
+            "warning");
+    }
 
     return (
         <header className="bg-primary text-on-primary py-8 w-full">
@@ -49,7 +56,7 @@ const Header = () => {
                             )}
                         </Link>
                     )}
-                    <button className="px-4 py-2 bg-on-primary text-primary rounded-lg hover:bg-gray-100 flex items-center">
+                    <button onClick={handleLoginClick} className="px-4 py-2 bg-on-primary text-primary rounded-lg hover:bg-gray-100 flex items-center">
                         <AccountCircleIcon className="mr-2" /> Login
                     </button>
                 </div>
