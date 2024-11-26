@@ -62,7 +62,7 @@ const ImageSelector = ({
                                         startIndex + index + 1
                                     }`}
                                     layout="fill"
-                                    objectFit="cover"
+                                    objectFit="contain"
                                     className="w-full h-full"
                                 />
                             </button>
