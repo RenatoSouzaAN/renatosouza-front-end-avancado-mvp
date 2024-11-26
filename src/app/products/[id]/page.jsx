@@ -49,11 +49,12 @@ const ProductPage = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
                 <section className="flex flex-col gap-3">
-                    <div className="aspect-square border rounded-2xl bg-background relative">
+                    <div className="aspect-square border rounded-2xl bg-white relative">
                         <Image
                             src={product.images[selectedImageIndex]}
                             alt={product.title}
                             layout="fill"
+                            objectFit="contain"
                             className="w-full h-full border rounded-2xl"
                         />
                     </div>
@@ -72,7 +73,7 @@ const ProductPage = () => {
                             <h1 className="text-4xl font-bold text-primary">
                                 {product.title}
                             </h1>
-                            <div className="flex gap-2">
+                            <div className="flex gap-2 h-12">
                                 <FavoriteButton
                                     product={product}
                                 ></FavoriteButton>
@@ -81,7 +82,7 @@ const ProductPage = () => {
                         </div>
 
                         <div className="flex items-baseline justify-between">
-                            <span className="text-3xl font-bold text-primary">
+                            <span className="text-4xl font-bold text-primary">
                                 R$ {product.price.toFixed(2)}
                             </span>
                             <span className="text-sm text-primary">
