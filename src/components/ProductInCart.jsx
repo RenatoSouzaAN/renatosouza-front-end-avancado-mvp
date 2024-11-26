@@ -18,7 +18,7 @@ const ProductInCart = ({ product, onRemove, onUpdateQuantity }) => {
                             src={product.images[0]}
                             alt={product.title}
                             layout="fill"
-                            className="w-full h-full"
+                            className="object-scale-down w-full h-full"
                         />
                     </div>
                 </div>
@@ -26,7 +26,7 @@ const ProductInCart = ({ product, onRemove, onUpdateQuantity }) => {
 
             <div className="flex flex-1 flex-row p-4 text-primary items-center justify-between">
                 <div className="flex flex-col">
-                    <h3 className="text-3xl mb-2">{product.title}</h3>
+                    <h3 className="text-xl mb-2">{product.title}</h3>
 
                     <div className="flex items-center mb-3">
                         <span className="mr-2">Quantidade: </span>
@@ -47,21 +47,24 @@ const ProductInCart = ({ product, onRemove, onUpdateQuantity }) => {
                 </div>
 
                 <div className="flex flex-col items-start">
-                    <p className="text-3xl pl-1">
-                        Preço: R${(product.price * product.quantity).toFixed(2)}
+                    <p className="text-lg pl-1">Preço:</p>
+                    <p className="text-2xl pl-1">
+                        R${(product.price * product.quantity).toFixed(2)}
                     </p>
                     {product.quantity > 1 && (
                         <p className="text-primary pl-1">
                             Preço unitário: R${product.price.toFixed(2)}
                         </p>
                     )}
-                    <button
-                        onClick={onRemove}
-                        className="flex items-center text-primary mt-2 gap-0"
-                    >
-                        <DeleteOutline />
-                        Remover produto
-                    </button>
+                    <div className="flex flex-col gap-0">
+                        <button
+                            onClick={onRemove}
+                            className="flex items-center text-error mt-2 gap-2 text-left"
+                        >
+                            <DeleteOutline color="error" />
+                            Remover
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
