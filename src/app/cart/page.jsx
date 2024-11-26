@@ -7,6 +7,7 @@ import { useCart } from "@/contexts/CartContext";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import ProductInCart from "@/components/ProductInCart";
 import Shipping from "@/components/Shipping";
+import { useNotification } from "@/contexts/NotificationContext";
 
 const CartPage = () => {
     const router = useRouter();
@@ -16,6 +17,7 @@ const CartPage = () => {
     ];
 
     const { cart, removeFromCart, updateQuantity } = useCart();
+    const { addNotification } = useNotification();
 
     const subTotal = () => {
         return cart.reduce(
@@ -23,6 +25,10 @@ const CartPage = () => {
             0
         );
     };
+
+    const handleBuyNow = () => {
+        addNotification("Essa funcionalidade ainda não está implementada.", "warning");
+    }
 
     return (
         <div className="mx-auto pt-4 pb-10">
@@ -74,7 +80,7 @@ const CartPage = () => {
                             <span>Total</span>
                             <span>R$ {(subTotal() + 15.9).toFixed(2)}</span>
                         </div>
-                        <button className="mt-4 bg-primary text-white py-2 px-4 rounded-lg hover:bg-primary/90">
+                        <button onClick={handleBuyNow} className="mt-4 bg-primary text-white py-2 px-4 rounded-lg hover:bg-primary/90">
                             Finalizar Compra
                         </button>
                     </div>
