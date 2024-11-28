@@ -1,7 +1,7 @@
 const products = [
     {
         id: "1",
-        title: "Corsair ICUE SP120 RGB ELITE Performance 120mm Branco",
+        title: "Corsair iCUE SP120 RGB ELITE Performance 120mm Branco",
         category: "Categoria 1",
         subcategory: "Sub-Categoria 1",
         subsubcategory: "Sub-Sub-Categoria 1",
@@ -20,7 +20,7 @@ const products = [
         ],
         specifications: [
             { title: "Marca:", info: "Corsair" },
-            { title: "Modelo:", info: "ICUE SP120 RGB ELITE" },
+            { title: "Modelo:", info: "iCUE SP120 RGB ELITE" },
             { title: "Tamanho do ventilador:", info: "120mm" },
             { title: "Cor:", info: "Branco" },
         ],
@@ -81,11 +81,13 @@ Desconecte-se! Com a super bateria de 5000 mAh você terá energia por muito mai
             "/images/ps5-pro_4.jpg",
         ],
         specifications: [
-            { title: "Dimensões da embalagem:", info: "46,8 x 35,6 x 17,8 cm; 4,84 quilogramas"},
+            {
+                title: "Dimensões da embalagem:",
+                info: "46,8 x 35,6 x 17,8 cm; 4,84 quilogramas",
+            },
             { title: "Número do modelo", info: "1000046552" },
             { title: "Armazenamento", info: "2 TB" },
             { title: "Cor:", info: "Branco" },
-
         ],
     },
 ];
