@@ -42,7 +42,7 @@ const ProductPage = () => {
                 setProduct(fetchedProduct);
             } catch (error) {
                 setError(error);
-                console.error('Failed to load product:', error);
+                console.error("Failed to load product:", error);
             } finally {
                 setIsLoading(false);
             }
@@ -59,8 +59,15 @@ const ProductPage = () => {
         ? [
               { label: "Página Inicial", href: "/" },
               { label: product.category, href: "#" },
-              { label: product.subcategory, href: "#" },
-              { label: product.subsubcategory, href: "#" },
+              ...(product.subcategory1
+                  ? [{ label: product.subcategory1, href: "#" }]
+                  : []),
+              ...(product.subcategory2
+                  ? [{ label: product.subcategory2, href: "#" }]
+                  : []),
+              ...(product.subcategory3
+                  ? [{ label: product.subcategory3, href: "#" }]
+                  : []),
               { label: product.title, href: "#" },
           ]
         : [
