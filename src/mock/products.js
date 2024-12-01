@@ -33,18 +33,22 @@ const products = [
         subcategory1: "Celulares e Acessórios",
         subcategory2: "Smartphones",
         description: `
-Fotografia profissional no seu bolso\n
-Descubra infinitas possibilidades para suas fotos com as 4 câmeras principais de sua equipe. Teste sua criatividade e jogue com iluminação, diferentes planos e efeitos para obter ótimos resultados.\n
-Perfeito para quem gosta de fotos detalhadas. Seu zoom óptico lhe dará a possibilidade de ampliar sem perder qualidade de suas capturas.\n\n
-Experiência visual incrível\n
-Assista às suas séries e filmes favoritos com a melhor definição na sua tela Dynamic AMOLED 2X de 6.8". Desfrute de cores brilhantes e detalhes precisos em todo o seu conteúdo.\n\n
-Capacidade e eficiência\n
-Com seu poderoso processador e memória RAM de 12 GB seu computador alcançará alto desempenho com alta velocidade de transmissão de conteúdos e executará vários aplicativos ao mesmo tempo, sem atrasos.\n\n
-Desbloqueio facial e de impressão digital\n
-Máxima segurança para que apenas você possa acessar o sua equipe. Você pode escolher entre o sensor de impressão digital para ativar seu telefone com um toque, ou o reconhecimento facial que permite desbloquear até 30% mais rápido.\n\n
-Vida útil da bateria mais longa\n
-Desconecte-se! Com a super bateria de 5000 mAh você terá energia por muito mais tempo para jogar, assistir séries ou trabalhar sem recarregar.
-`,
+            \\bFotografia profissional no seu bolso\\b\\n
+            Descubra infinitas possibilidades para suas fotos com as 4 câmeras principais de sua equipe. Teste sua criatividade e jogue com iluminação, diferentes planos e efeitos para obter ótimos resultados.\\n
+            Perfeito para quem gosta de fotos detalhadas. Seu zoom óptico lhe dará a possibilidade de ampliar sem perder qualidade de suas capturas.\\n\\n
+
+            \\bExperiência visual incrível\\b\\n
+            Assista às suas séries e filmes favoritos com a melhor definição na sua tela Dynamic AMOLED 2X de 6.8\". Desfrute de cores brilhantes e detalhes precisos em todo o seu conteúdo.\\n\\n
+
+            \\bCapacidade e eficiência\\b\\n
+            Com seu poderoso processador e memória RAM de 12 GB seu computador alcançará alto desempenho com alta velocidade de transmissão de conteúdos e executará vários aplicativos ao mesmo tempo, sem atrasos.\\n\\n
+
+            \\bDesbloqueio facial e de impressão digital\\b\\n
+            Máxima segurança para que apenas você possa acessar o sua equipe. Você pode escolher entre o sensor de impressão digital para ativar seu telefone com um toque, ou o reconhecimento facial que permite desbloquear até 30% mais rápido.\\n\\n
+
+            \\bVida útil da bateria mais longa\\b\\n
+            Desconecte-se! Com a super bateria de 5000 mAh você terá energia por muito mais tempo para jogar, assistir séries ou trabalhar sem recarregar.
+        `,
         price: 10000.0,
         stock: 5,
         images: [
@@ -72,8 +76,23 @@ Desconecte-se! Com a super bateria de 5000 mAh você terá energia por muito mai
         subcategory1: "Games",
         subcategory2: "Videogames",
         subcategory3: "PlayStation",
-        description:
-            "Com o console PlayStation®5 Pro, os maiores criadores de jogos do mundo podem melhorar seus jogos com recursos incríveis, como Ray Tracing avançado, imagem super nítida para TV 4K e jogabilidade com alta taxa de quadros.* Isso significa que você poderá jogar os jogos do PS5® com os visuais mais impressionantes já vistos em um console PlayStation® e, com 2 TB de armazenamento SSD incluídos, seus jogos favoritos estarão prontos e esperando a próxima aventura incrível.O PS5® Pro é um console totalmente digital, sem unidade de disco. Inicie uma sessão na sua conta da PlayStation™Network e acesse a PlayStation™Store para comprar e baixar jogos.6 Você também pode adicionar uma unidade de disco ao seu console PS5® Pro se quiser jogar jogos de PS5 ou PS4 em discos Blu-ray™, ou se quiser assistir a filmes e programas em discos Blu-ray™ 4K Ultra HD, discos Blu-ray™ e DVDs. A unidade de disco compatível é vendida separadamente. *Recursos disponíveis somente em jogos de PS5 selecionados que foram aprimorados para o PS5 Pro em comparação com o PS5. Os recursos aprimorados do PS5 Pro variam de acordo com o jogo.3 Uma parte do SSD é reservada para software do sistema e outras funções, portanto a capacidade disponível do SSD pode variar.",
+        description: `
+                \\bSuper-Resolução Espectral (PSSR)\\b\\n
+                Aproveite as imagens super nítidas em sua TV 4K utilizando a tecnologia de resolução aprimorada por IA, que proporciona gráficos em ultra-alta definição.\\n\\n
+                
+                \\bDesempenho otimizado\\b\\n
+                Aproveite uma gameplay fluida e tranquila com taxas de quadros elevadas, suportando telas de 60 Hz e 120 Hz.*\\n\\n
+                
+                \\bRay Tracing avançado\\b\\n
+                Mergulhe no mundo dos jogos enquanto experimenta imagens realistas impressionantes, com reflexos e sombras de alta qualidade, graças à iluminação global e ao traçado de raio.*\\n\\n
+                
+                \\b2TB de armazenamento\\b\\n
+                Tenha todos os seus jogos favoritos ao alcance com 2TB de armazenamento SSD integrado, pronto para jogar a qualquer momento.\\n\\n
+                
+                \\bGráficos impressionantes\\b\\n
+                Com o poder do PS5 Pro, os jogos compatíveis podem ser jogados em 60 FPS, ou até 120 FPS, com Ray Tracing e resolução 4K aprimorada por IA usando PSSR, tudo ao mesmo tempo, na sua TV 4K.\\n\\n
+                **Recursos disponíveis somente em jogos de PS5 selecionados adaptados para o PS5 Pro. Os recursos aprimorados do PS5 Pro variam de acordo com o jogo.**
+        `,
         price: 7000.0,
         stock: 0,
         images: [

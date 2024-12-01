@@ -8,6 +8,55 @@ const ProductTabs = ({ product }) => {
         { id: "specifications", label: "Especificações" },
         { id: "reviews", label: "Avaliações" },
     ];
+    
+    const parseText = (text) => {
+        const elements = [];
+        const tokens = text.split(/(\\[nbt])/);
+
+        let isBold = false;
+        let boldBuffer = "";
+
+        tokens.forEach((token, index) => {
+            if (token === "\\n") {
+                if (isBold && boldBuffer) {
+                    elements.push(<strong key={`${index}`}>{boldBuffer}</strong>);
+                    boldBuffer = "";
+                }
+                elements.push(<br key={index} />);
+            } else if (token === "\\b") {
+                if (isBold && boldBuffer) {
+                    elements.push(<strong key={`${index}`}>{boldBuffer}</strong>);
+                    boldBuffer = "";
+                }
+                isBold = !isBold;
+            } else if (token === "\\t") {
+                if (isBold && boldBuffer) {
+                    elements.push(<strong key={`${index}`}>{boldBuffer}</strong>);
+                    boldBuffer = "";
+                }
+                elements.push(
+                    <span
+                        key={index}
+                        style={{ display: "inline-block", width: "2em" }}
+                    >
+                        &nbsp;
+                    </span>
+                );
+            } else {
+                if (isBold) {
+                    boldBuffer += token;
+                } else {
+                    elements.push(token);
+                }
+            }
+        });
+
+        if (isBold && boldBuffer) {
+            elements.push(<strong key={"final-bold"}>{boldBuffer}</strong>);
+        }
+
+        return elements;
+    }
 
     const renderTabContent = () => {
         switch (selectedTab) {
@@ -15,7 +64,7 @@ const ProductTabs = ({ product }) => {
                 return (
                     <div className="prose">
                         <p className="text-primary text-justify">
-                            {product.description}
+                            {parseText(product.description)}
                         </p>
                     </div>
                 );
