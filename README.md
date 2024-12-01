@@ -89,7 +89,7 @@ To get a local copy up and running, follow these steps.
 2. Open your browser and visit http://localhost:3000 to access the application.
 
 3. Upon launching the application, you will see the main page displaying a list of available products. Click on a product to view its detailed information, and use the "Add to Cart" button to add it to your shopping cart.
-   The shopping cart functionality is currently limited to displaying the selected items. Future enhancements will include the ability to update quantities, remove items, and proceed to checkout.
+   The shopping cart functionality is currently limited to displaying the selected items, update quantities, and remove items. Future enhancements will include the ability to add shipping information, payment detail, and processing.
 
 ## Future Enhancements
 
