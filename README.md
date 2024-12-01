@@ -7,7 +7,7 @@ DMarket is a standalone front-end web application that serves as an e-commerce m
 Project Overview
 
 -   [Technology Stack](#technology-stack)
-    Features
+-   [Features](#features)
 -   [Getting Started](#getting-started)
     -   [Prerequisites](#prerequisites)
     -   [Installation](#installation)
