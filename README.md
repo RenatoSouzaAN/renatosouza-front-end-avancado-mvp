@@ -8,10 +8,10 @@ Project Overview
 
 -   [Technology Stack](#technology-stack)
 -   [Features](#features)
+-   [Dependencies](#dependencies)
 -   [Getting Started](#getting-started)
     -   [Prerequisites](#prerequisites)
     -   [Installation](#installation)
--   [Dependencies](#dependencies)
 -   [Usage](#usage)
 -   [Future Enhancements](#future-enhancements)
 -   [Contributors](#contributors)
@@ -37,6 +37,11 @@ This project is part of a larger e-commerce platform and serves as the initial f
 -   View a list of available products
 -   Access detailed information about each product
 -   Add products to the shopping cart
+
+## Dependencies
+
+-   Node.js (version 14 or higher)
+-   npm or yarn
 
 ## Getting Started
 
@@ -66,11 +71,6 @@ To get a local copy up and running, follow these steps.
     ```sh
     npm install
     ```
-
-## Dependencies
-
--   Node.js (version 14 or higher)
--   npm or yarn
 
 ## Usage
 
