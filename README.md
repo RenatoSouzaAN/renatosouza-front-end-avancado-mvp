@@ -40,7 +40,7 @@ This is my product design made in Figma
 ![image](https://github.com/user-attachments/assets/c36aaee9-150b-4845-abec-782708210e6a)
 
 
-This is my the link to access this Figma file: https://www.figma.com/design/gIHJPqImpM09NYKd3RQqua/DMarket?node-id=0-1&t=GvfxuVmGcwiQOpbx-1
+This is the link to access this Figma file: https://www.figma.com/design/gIHJPqImpM09NYKd3RQqua/DMarket?node-id=0-1&t=GvfxuVmGcwiQOpbx-1
 
 ## Features
 
