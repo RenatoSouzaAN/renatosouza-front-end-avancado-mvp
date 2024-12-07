@@ -7,6 +7,7 @@ DMarket is a standalone front-end web application that serves as an e-commerce m
 Project Overview
 
 -   [Technology Stack](#technology-stack)
+-   [Figma](#figma)
 -   [Features](#features)
 -   [Dependencies](#dependencies)
 -   [Getting Started](#getting-started)
@@ -31,6 +32,15 @@ This project is part of a larger e-commerce platform and serves as the initial f
 -   **npm**: As the package manager.
 -   **Create React App**: For bootstrapping the Next.js application.
 -   **Figma**: For UI design and prototyping.
+
+## Figma
+
+This is my product design made in Figma
+
+![image](https://github.com/user-attachments/assets/c36aaee9-150b-4845-abec-782708210e6a)
+
+
+This is my the link to access this Figma file: https://www.figma.com/design/gIHJPqImpM09NYKd3RQqua/DMarket?node-id=0-1&t=GvfxuVmGcwiQOpbx-1
 
 ## Features
 
