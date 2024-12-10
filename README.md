@@ -115,4 +115,4 @@ The DMarket front-end MVP is a work in progress, and the following features are 
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the Custom Code License Agreement. See the [LICENSE](./LICENSE) file for more details.
