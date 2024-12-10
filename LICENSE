@@ -1,4 +1,5 @@
 Custom Code License Agreement
+
 1. Definitions
 "Code" refers to the source code, scripts, configurations, and associated files contained within this repository.
 "You" and "Your" refer to the licensee.
@@ -13,5 +14,9 @@ This use must not expose or provide access, directly or indirectly (e.g., via wr
 3. Restrictions
 You may not bypass, alter, or remove license terms embedded in the Code.
 You may not use the Code to create a competing product.
-4. Disclaimer of Warranty
-THE CODE IS PROVIDED "AS IS," WITHOUT WARRANTY OF ANY KIND.
+
+4. Copyright Notice
+Copyright (c) 2024 Renato Souza
+
+5. Disclaimer of Warranty
+THE CODE IS PROVIDED "AS IS," WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE CODE OR THE USE OR OTHER DEALINGS IN THE CODE.
